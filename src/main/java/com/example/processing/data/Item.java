@@ -13,15 +13,15 @@ public class Item {
     private Long id;
     private String name;
     private String category;
-    private Double value;
+    private Double itemValue;
 
     // Constructors
     public Item() {}
 
-    public Item(String name, String category, Double value) {
+    public Item(String name, String category, Double itemValue) {
         this.name = name;
         this.category = category;
-        this.value = value;
+        this.itemValue = itemValue;
     }
 
     // Getters and Setters
@@ -49,11 +49,11 @@ public class Item {
         this.category = category;
     }
 
-    public Double getValue() {
-        return value;
+    public Double getItemValue() {
+        return itemValue;
     }
 
-    public void setValue(Double value) {
-        this.value = value;
+    public void setItemValue(Double itemValue) {
+        this.itemValue = itemValue;
     }
 }

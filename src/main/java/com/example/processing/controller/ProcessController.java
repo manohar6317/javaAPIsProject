@@ -23,4 +23,9 @@ public class ProcessController {
         ProcessResponse response = processService.processItems(topN);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the Item Processing Service! The primary endpoint is at /process.";
+    }
 }

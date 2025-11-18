@@ -51,7 +51,7 @@ public class ProcessService {
 
     private ItemDto calculateScore(Item item) {
         double weight = CATEGORY_WEIGHTS.getOrDefault(item.getCategory(), 1.0);
-        double score = item.getValue() * weight;
+        double score = item.getItemValue() * weight;
         return ItemDto.from(item, score);
     }
 }
