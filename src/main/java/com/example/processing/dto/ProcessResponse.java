@@ -1,5 +1,9 @@
 package com.example.processing.dto;
 
-public class ProcessResponse {
-    
-}
+import java.util.List;
+
+public record ProcessResponse(
+    List<ItemDto> topItems,
+    long count,
+    double averageScore
+) {}
