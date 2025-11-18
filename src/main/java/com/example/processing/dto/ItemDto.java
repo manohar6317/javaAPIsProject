@@ -1,11 +1,13 @@
 package com.example.processing.dto;
 
 import com.example.processing.data.Item;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record ItemDto(
     Long id,
     String name,
     String category,
+    @JsonProperty("value")
     Double itemValue,
     Double score
 ) {

@@ -34,15 +34,16 @@ public class ProcessService {
 
         List<ItemDto> scoredItems = allItems.stream()
             .map(this::calculateScore)
-            .sorted(Comparator.comparingDouble(ItemDto::score).reversed())
             .collect(Collectors.toList());
 
         double averageScore = scoredItems.stream()
             .mapToDouble(ItemDto::score)
             .average()
             .orElse(0.0);
-
+        
+        // Sort and limit after calculating the average on the full set
         List<ItemDto> topItems = scoredItems.stream()
+            .sorted(Comparator.comparingDouble(ItemDto::score).reversed())
             .limit(topN)
             .collect(Collectors.toList());
 
